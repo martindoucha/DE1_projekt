@@ -9,29 +9,58 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 * Pavel Čurda
 
 ## Blokové schéma
-<img width="1851" height="772" alt="schema_final drawio" src="schema_final.drawio.png" />
+<img width="1846" height="1261" alt="schema_final drawio" src="https://github.com/user-attachments/assets/ba4df098-a3f6-4736-acde-650eb1619c38" />
+
 
 
 
 ## Vstupy
-Ovládání systému je realizováno pomocí tlačítek na desce Nexys:
-* **BTNC**: Hlavní reset celého systému.
-* **BTNL**: Tlačítko vypnutí alarmu.
-* Další tlačítka budou využita pro nastavení hodnot času a alarmu.
+Ovládání systému je realizováno pomocí tlačítek na desce **Nexys A7-50T**:
+* **BTNC**: Hlavní reset celého systému – vynuluje čas, zruší aktivní alarm a resetuje vnitřní automaty.
+* **BTNL**: Multifunkční tlačítko pro ovládání alarmu:
+    * **Krátký stisk**: Aktivace funkce **Snooze** (odložení buzení o 5 minut).
+    * **Dlouhý stisk (Hold)**: Úplné vypnutí (Stop) alarmu.
+* **CLK (Pin E3)**: Zdroj hodinového signálu 100 MHz.
 
 ## Výstupy
 Výstupní data jsou zobrazena na následujících periferiích:
 
 ### Sedmisegmentový displej
-* **DISP 0 až 3**: Zobrazení aktuálního času (hodiny a minuty).
-* **DISP 4 až 7**: Zobrazení času nastaveného alarmu.
+Data jsou zobrazena pomocí časového multiplexu (obnovovací frekvence cca 1 kHz).
+* **DISP 0 až 3**: Zobrazení aktuálního času ve formátu `HH:MM`.
+* **DISP 4 až 7**: Zobrazení času nastaveného alarmu ve formátu `HH:MM`.
+* **Segmenty (A-G)**: Výstupní sběrnice `seg(6:0)` pro ovládání jednotlivých segmentů (společná anoda).
+* **Anody (AN0-AN7)**: Výstupní sběrnice `an(7:0)` pro aktivaci konkrétní cifry.
 
 ### Dvojtečka (DP)
-* Slouží k vizuálnímu oddělení hodin a minut nebo indikaci vteřinového taktu.
+* Indikátor vteřinového taktu. Bliká v rytmu 1 Hz (0,5 s svítí / 0,5 s nesvítí) pro vizuální potvrzení běhu hodin.
 
-## Komponenty
-### Snooze
-Hlavní řídící logický blok pro zapínání a vypínání budíku alarmu.
+### LED signalizace
+* **LED16_R (červená)**: Signalizuje aktivní stav buzení. Svítí, dokud není alarm potvrzen tlačítkem nebo neuplyne časový limit.
+
+---
+
+## Komponenty systému
+
+### Snooze (snooze_top)
+Hlavní řídicí blok budíku, který integruje:
+* **Debounce**: Ošetření mechanických zákmitů tlačítek a detekce délky stisku.
+* **Timery**:
+    * **2 minuty**: Automatické ukončení buzení při nečinnosti.
+    * **5 minut**: Odpočet pro opakované buzení (Snooze).
+* **FSM**: Konečný automat přepínající stavy mezi IDLE, ACTIVE (zvonění) a SNOOZE.
+
+### Time Counter (counter_auto)
+Logika zajišťující inkrementaci času. 
+* Obsahuje vnitřní děličku frekvence (`clk_en`) pro získání vteřinového taktu.
+* Spravuje přechody: 59 s → 0 s, 59 min → 0 min a 23:59:59 → 00:00:00.
+
+### Comparator
+Digitální porovnávač, který v každém taktu kontroluje shodu mezi aktuálním časem a nastaveným alarmem. Při shodě vysílá aktivační signál do bloku Snooze.
+
+### Display Driver
+Zajišťuje dynamický multiplexing pro 8 cifer displeje. Převádí BCD data na kódy pro 7 segmentů pomocí sub-modulu `bin2seg`.
+
 
 <img width="901" height="316" alt="Obrázek simulace Snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času." src="simulace/SnoozeTBonTimeout.png" />
 
