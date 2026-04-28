@@ -43,7 +43,8 @@ architecture Behavioral of debounce is
         port (
             clk : in  std_logic;
             rst : in  std_logic;
-            ce  : out std_logic
+            ce  : out std_logic;
+			f_out : out std_logic
         );
     end component clk_en;
 
@@ -57,6 +58,7 @@ begin
             clk => clk,
             rst => rst,
             ce  => ce_sample
+			f_out => open
         );
 
     ----------------------------------------------------------------
