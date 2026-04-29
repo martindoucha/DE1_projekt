@@ -33,6 +33,12 @@ set_property PACKAGE_PIN H15 [get_ports {dp}];
 set_property IOSTANDARD LVCMOS33 [get_ports {seg[*] dp}]
 
 # -----------------------------------------------
+# Switches
+# -----------------------------------------------
+set_property -dict { PACKAGE_PIN J15 IOSTANDARD LVCMOS33 } [get_ports {sw[0]}];
+set_property -dict { PACKAGE_PIN L16 IOSTANDARD LVCMOS33 } [get_ports {sw[1]}];
+
+# -----------------------------------------------
 # Seven-segment anodes AN7..AN0 (active-low)
 # -----------------------------------------------
 set_property PACKAGE_PIN J17 [get_ports {an[0]}];
