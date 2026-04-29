@@ -101,13 +101,13 @@ begin
         port map(
             clk   => clk,
             rst   => btnc,
-             btn_press => btnu,
+            en => btnu,
             switch => sw0,
             --tlačítko a switch
-            cnthd => sig_h_des,
-            cnthj => sig_h_jed,
-            cntmd => sig_m_des,
-            cntmj => sig_m_jed
+            cnt2hd => sig_h_des,
+            cnt2hj => sig_h_jed,
+            cnt2md => sig_m_des,
+            cnt2mj => sig_m_jed
         );
 
     --------------------------------------------------------
