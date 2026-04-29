@@ -49,7 +49,7 @@ begin
                         elsif btn_hold = '1' then
                             current_state <= IDLE;
                         else
-                            current_state <= SNOOZE
+                            current_state <= SNOOZE;
                         end if;
                     
                         squeak <= '0';

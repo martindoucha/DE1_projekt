@@ -63,7 +63,7 @@ begin
     ----------------------------------------------------------------
 
     -- Debounce logic for the button input
-    U_DEBOUNCE : debounce
+    debounce_inst : debounce
         port map (
             clk         => clk,
             rst         => rst,
@@ -75,7 +75,7 @@ begin
         );
 
     -- Edge detector for the external comparator signal
-    U_RE_DET_SQK : rising_edge_detector
+    rising_edge_detector_inst_1 : rising_edge_detector
         port map (
             clk   => clk,
             rst   => rst,
@@ -84,7 +84,7 @@ begin
         );
 
     -- Edge detector for the squeak feedback (loopback)
-    U_RE_DET_TI : rising_edge_detector
+    rising_edge_detector_inst_2 : rising_edge_detector
         port map (
             clk   => clk,
             rst   => rst,
@@ -93,7 +93,7 @@ begin
         );
 
     -- Timer: 120 Second (No Response)
-    U_TIMER_120 : timer
+    timer_inst_1 : timer
         generic map ( G_SECONDS => 120 )
         port map (
             clk   => clk,
@@ -104,7 +104,7 @@ begin
         );
 
     -- Timer: 300 Second (Snooze Over)
-    U_TIMER_300 : timer
+    timer_inst_2 : timer
         generic map ( G_SECONDS => 300 )
         port map (
             clk   => clk,
@@ -115,7 +115,7 @@ begin
         );
 
     -- Main Snooze Control FSM
-    U_SNOOZE : snooze
+    snooze_inst : snooze
         port map (
             clk               => clk,
             rst               => rst,

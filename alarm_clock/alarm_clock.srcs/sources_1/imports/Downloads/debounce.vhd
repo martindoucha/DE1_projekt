@@ -57,7 +57,7 @@ begin
         port map (
             clk => clk,
             rst => rst,
-            ce  => ce_sample
+            ce  => ce_sample,
 			f_out => open
         );
 
