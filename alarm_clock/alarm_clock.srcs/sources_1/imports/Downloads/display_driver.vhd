@@ -83,7 +83,7 @@ begin
             when "001" => 
                 an <= "11111101"; sig_bin_to_dec <= m_des; dp <= '1';
             when "010" => -- Mezi hodinami a minutami bliká dvojtečka
-                an <= "11111011"; sig_bin_to_dec <= h_jed; dp <= not clk_1hz; 
+                an <= "11111011"; sig_bin_to_dec <= h_jed; dp <= '0'; 
             when "011" => 
                 an <= "11110111"; sig_bin_to_dec <= h_des; dp <= '1';
 
@@ -93,7 +93,7 @@ begin
             when "101" => 
                 an <= "11011111"; sig_bin_to_dec <= am_des; dp <= '1';
             when "110" => -- U alarmu může dvojtečka svítit trvale pro odlišení
-                an <= "10111111"; sig_bin_to_dec <= ah_jed; dp <= '0';
+                an <= "10111111"; sig_bin_to_dec <= ah_jed; dp <= not clk_1hz;
             when "111" => 
                 an <= "01111111"; sig_bin_to_dec <= ah_des; dp <= '1';
             
