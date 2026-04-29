@@ -90,7 +90,7 @@ begin
             rst   => btnc,
             btn_press => sig_deb_btnu,
             switch => sw0,
-            switch2 =>sw1 ,
+            switch2 =>sw1,
             --talčítko a oba switche
             cnthd => alrm_h_des,
             cnthj => alrm_h_jed,
@@ -106,7 +106,8 @@ begin
             rst   => btnc,
             en => sig_deb_btnu,
             switch => sw0,
-            --tlačítko a switch
+            switch2 =>sw1,
+            --tlačítko a oba switche
             cnt2hd => sig_h_des,
             cnt2hj => sig_h_jed,
             cnt2md => sig_m_des,
