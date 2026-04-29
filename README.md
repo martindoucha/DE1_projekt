@@ -66,6 +66,8 @@ Digitální porovnávač, který v každém taktu kontroluje shodu mezi aktuáln
 
 ### Display Driver
 Zajišťuje dynamický multiplexing pro 8 cifer displeje. Převádí BCD data na kódy pro 7 segmentů pomocí sub-modulu `bin2seg`.
+<img width="1009" height="561" alt="display_driver" src="https://github.com/user-attachments/assets/494fbe73-136f-49b4-95d9-a1856974bc2c" />
+
 
 ### rising_edge_detector
 Pomocná součástka která vytvoří jedni clockový puls při detekci náběžné hrany.
