@@ -16,7 +16,8 @@ entity counter_set_time is
         cnt2hj : out std_logic_vector (G_BITS - 1 downto 0);
         cnt2md : out std_logic_vector (G_BITS - 1 downto 0);
         cnt2mj : out std_logic_vector (G_BITS - 1 downto 0);
-        switch :  in std_logic 
+        switch :  in std_logic;
+        switch2 : in std_logic 
     );
 end entity counter_set_time;
 
@@ -48,7 +49,7 @@ begin
                 sig_cnt2mj <= 0;
 
             elsif en = '1' then  -- Clock enable activated
-                if switch = '0' then
+                if switch = '0' and switch2='0' then   --když nastavuju čas ne budík 
                  if sig_cnt2hd=2 AND sig_cnt2hj=3 then
                     sig_cnt2hd <= 0;
                     sig_cnt2hj <= 0;
