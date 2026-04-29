@@ -22,37 +22,41 @@ begin
 
             if rst = '1' then
                     current_state <= IDLE;
-            end if;
-
-            case current_state is
+            else
+                case current_state is
             
-                when IDLE =>
-                    if start = '1' then
-                        current_state <= ACTIVE;
-                    else
-                        current_state <= IDLE;
-                    end if;
+                    when IDLE =>
+                        if start = '1' then
+                            current_state <= ACTIVE;
+                        else
+                            current_state <= IDLE;
+                        end if;
                     
-                    squeak <= '0';
+                        squeak <= '0';
                     
-                when ACTIVE =>
-                    if btn_press = '1' or timer_no_response = '1' then
-                        current_state <= SNOOZE;
-                    end if;
+                    when ACTIVE =>
+                        if btn_press = '1' or timer_no_response = '1' then
+                            current_state <= SNOOZE;
+                        else
+                            current_state <= ACTIVE;
+                        end if;
                     
-                    squeak <= '1';
+                        squeak <= '1';
     
-                when SNOOZE =>
-                    if timer_snooze_over = '1' then
-                        current_state <= ACTIVE;
-                    elsif btn_hold = '1' then
-                        current_state <= IDLE;
-                    end if;
+                    when SNOOZE =>
+                        if timer_snooze_over = '1' then
+                            current_state <= ACTIVE;
+                        elsif btn_hold = '1' then
+                            current_state <= IDLE;
+                        else
+                            current_state <= SNOOZE
+                        end if;
                     
-                    squeak <= '0';
+                        squeak <= '0';
                     
-            end case;
+                end case;
 
+            end if;
         end if;
     end process;
 

@@ -9,7 +9,7 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 * Pavel Čurda
 
 ## Blokové schéma
-<img width="1846" height="1261" alt="schema_final drawio" src="https://github.com/user-attachments/assets/ba4df098-a3f6-4736-acde-650eb1619c38" />
+<img width="1846" height="1261" alt="schema_final drawio" src="/pracovni/schema_block_complete.png" />
 
 
 
@@ -50,6 +50,12 @@ Hlavní řídicí blok budíku, který integruje:
     * **5 minut**: Odpočet pro opakované buzení (Snooze).
 * **FSM**: Konečný automat přepínající stavy mezi IDLE, ACTIVE (zvonění) a SNOOZE.
 
+Simulace snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času. Puls start vybudí změnu stavu do aktivního, kde squak se přepne na vysokou úroveň. Po nějaké době, přijde puls že nebyla žádná reakce, a čeká se na 5 minutový timer (snooze_over) až znovu zapne aktivní stav. Aktivní stav se ukončí po dlouhém stisku tlačítka.
+<img width="901" height="316" alt="Obrázek simulace snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času." src="simulace/SnoozeTBonTimeout.png" />
+
+Simulace snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítkem. Stejně jako v předchozí simulaci, s rozdílem že odložení zvonku je provedeno krátkým stiskem tlačítka.
+<img width="1409" height="306" alt="Obrázek simulace snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítkem." src="simulace/SnoozeTBonPress.png" />
+
 ### Time Counter (counter_auto)
 Logika zajišťující inkrementaci času. 
 * Obsahuje vnitřní děličku frekvence (`clk_en`) pro získání vteřinového taktu.
@@ -60,11 +66,6 @@ Digitální porovnávač, který v každém taktu kontroluje shodu mezi aktuáln
 
 ### Display Driver
 Zajišťuje dynamický multiplexing pro 8 cifer displeje. Převádí BCD data na kódy pro 7 segmentů pomocí sub-modulu `bin2seg`.
-
-
-<img width="901" height="316" alt="Obrázek simulace Snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času." src="simulace/SnoozeTBonTimeout.png" />
-
-<img width="1409" height="306" alt="Obrázek simulace Snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítkem." src="simulace/SnoozeTBonPress.png" />
 
 ### rising_edge_detector
 Pomocná součástka která vytvoří jedni clockový puls při detekci náběžné hrany.
