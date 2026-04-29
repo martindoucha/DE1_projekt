@@ -9,6 +9,9 @@ entity alarm_clock_top is
         clk     : in  STD_LOGIC; -- 100 MHz hlavní hodiny (Pin E3)
         btnc    : in  STD_LOGIC; -- Reset celého systému (Pin N17)
         btnl    : in  STD_LOGIC; -- Tlačítko Snooze / Zrušit (Pin P17)
+        btnu : in STD_LOGIC;
+        sw0 : in STD_LOGIC;
+        sw1 : in STD_LOGIC;
         
         -- Fyzické výstupy na 7-segmentový displej
         seg     : out STD_LOGIC_VECTOR (6 downto 0);
@@ -74,7 +77,7 @@ begin
     -- 3. Hlavní kaskáda čítačů (Generuje aktuální čas)
     -- Uvnitř má svůj vlastní clk_en pro vteřinový takt.
     --------------------------------------------------------
-    time_counters : entity work.counter_auto
+    time_counters : entity work.counter_time
         generic map( 
             G_BITS => 4,
             G_MAX  => 100_000_000 -- Interval pro reálný chod (1 s)
@@ -82,6 +85,25 @@ begin
         port map(
             clk   => clk,
             rst   => btnc,
+            btn_press => btnu,
+            switch => sw0,
+            switch2 =>sw1 ,
+            --talčítko a oba switche
+            cnthd => alrm_h_des,
+            cnthj => alrm_h_jed,
+            cntmd => alrm_m_des,
+            cntmj => alrm_m_jed
+        );
+    set_time_counters : entity work.counter_set_time
+        generic map( 
+            G_BITS => 4
+        )
+        port map(
+            clk   => clk,
+            rst   => btnc,
+             btn_press => btnu,
+            switch => sw0,
+            --tlačítko a switch
             cnthd => sig_h_des,
             cnthj => sig_h_jed,
             cntmd => sig_m_des,
