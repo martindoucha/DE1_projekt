@@ -9,10 +9,9 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 * Pavel Čurda
 
 ## Blokové schéma
-<img width="1846" height="1261" alt="schema_final drawio" src="/pracovni/schema_block_complete.png" />
+<img width="1279" height="602" alt="schema_final_revised drawio" src="https://github.com/user-attachments/assets/f32c90b0-adc1-4eae-b756-f0d1d4621d1f" />
 
-
-
+<img width="6035" height="4405" alt="snooze_top2 drawio" src="https://github.com/user-attachments/assets/788d98bf-b741-4833-b73f-14e0940dbb58" />
 
 ## Vstupy
 Ovládání systému je realizováno pomocí tlačítek na desce **Nexys A7-50T**:
