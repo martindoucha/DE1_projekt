@@ -49,7 +49,8 @@ begin
                 sig_cnt2mj <= 0;
 
             elsif en = '1' then  -- Clock enable activated
-                if switch = '0' and switch2='0' then   --když nastavuju čas ne budík 
+                if switch2='0' then
+                if switch = '0' then   --když nastavuju čas ne budík
                  if sig_cnt2hd=2 AND sig_cnt2hj=3 then
                     sig_cnt2hd <= 0;
                     sig_cnt2hj <= 0;
@@ -62,8 +63,8 @@ begin
                             sig_cnt2hj <= sig_cnt2hj +1;
                  end if;
                 
-                end if;
-                if switch = '1' then
+              
+                elsif switch = '1' then
                     if sig_cnt2md=5 AND sig_cnt2mj=9 then
                         sig_cnt2md <= 0;
                         sig_cnt2mj <= 0;
@@ -77,7 +78,7 @@ begin
                 end if;                       
             end if;
         end if;
-        
+        end if;
    end process p_counter;
 
     -- Convert integer to std_logic_vector
