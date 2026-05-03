@@ -84,7 +84,7 @@ Upravená součástka z počítačových cvičení, s detekcí držení.
 ### countery_cas = aktuální čas
 Tato součástka má dva režimy, které se dají přepínat switch2. Když je hodnota switche2 0 čas je měřen (pomocí pulzu na clk_en) a komponenta funguje jako hodiny. Pokud je switch2 na hodnotě 1, je možno nastavovat čas pomocí tlačítka a switche jako u counter_set_time.
 Switch 2 je na 0, to znamená že čas samovolně běží:
-<img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_cas_bezi.png" />
+<img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_oprava.png" />
 Switch 2 je na 1 a switch na 1 ,to znamená, že je možno tlačítkem přenastavovat hodiny
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_nastaveni_minut.png" />
 Switch 2 je na 1 a switch na 0 ,to znamená, že je možno tlačítkem přenastavovat hodiny
