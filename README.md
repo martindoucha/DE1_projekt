@@ -106,7 +106,7 @@ Simulace překlopení z 23:59 na 0:00 :
 ### counter_set_time = budík
 Upravený blok counterů pro nastavování času budíku. Pomocí switche je možno přepínat mezi nastavováním minut a hodin.
 Simulace nastavování hodin (poloha switche 0):
-<img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_hours.png" />
+<img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_hours1.png" />
 Simulace nastavování minut (poloha switche 1):
-<img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_minutes.png" />
+<img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_minutes1.png" />
 
