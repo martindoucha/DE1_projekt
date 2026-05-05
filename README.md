@@ -22,7 +22,8 @@ Ovládání systému je realizováno pomocí tlačítek na desce **Nexys A7-50T*
     * **Krátký stisk**: Aktivace funkce **Snooze** (odložení buzení o 5 minut).
     * **Dlouhý stisk (Hold)**: Úplné vypnutí (Stop) alarmu.
 * **CLK (Pin E3)**: Zdroj hodinového signálu 100 MHz.
-
+* **sw0**: Přepínání nastavování hodin a minut (poloha 0 = nastavují se hodiny, poloha 1 = nastavují se minuty)
+* **sw1**: Přepínání nastavování/běhu času (poloha 0 = čas samovolně běží, poloha 1 = čas je nastavován tlačítkem)
 ## Výstupy
 Výstupní data jsou zobrazena na následujících periferiích:
 
