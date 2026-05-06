@@ -88,13 +88,13 @@ Upravená součástka z počítačových cvičení, s detekcí držení.
 Simulace zde: [tb_debounce](testbenche/tb_debounce.vhd).
 
 ### countery_cas = aktuální čas
-Tato součástka má dva režimy, které se dají přepínat switch2. Když je hodnota switche2 0 čas je měřen (pomocí pulzu na clk_en) a komponenta funguje jako hodiny. Pokud je switch2 na hodnotě 1, je možno nastavovat čas pomocí tlačítka a switche jako u counter_set_time.
-Switch 2 je na 0, to znamená že čas samovolně běží: 
+Tato součástka má dva režimy, které se dají přepínat sw1. Když je hodnota sw1 0 čas je měřen (pomocí pulzu na clk_en) a komponenta funguje jako hodiny. Pokud je sw1 na hodnotě 1, je možno nastavovat čas pomocí tlačítka a sw0 jako u counter_set_time.
+Sw1 je na 0, to znamená že čas samovolně běží: 
 Simulace zde: [tb_counter_time](testbenche/tb_counter_time.vhd).
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_oprava.png" />
-Switch 2 je na 1 a switch na 1 ,to znamená, že je možno tlačítkem přenastavovat hodiny
+Sw1 je na 1 a sw0 na 1 ,to znamená, že je možno tlačítkem přenastavovat hodiny
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_nastaveni_minut.png" />
-Switch 2 je na 1 a switch na 0 ,to znamená, že je možno tlačítkem přenastavovat hodiny
+Sw1 je na 1 a sw0 na 0 ,to znamená, že je možno tlačítkem přenastavovat hodiny
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_nastaveni_hodin.png" />
 
 ### counter_time
@@ -110,10 +110,10 @@ Simulace překlopení z 23:59 na 0:00 :
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_counter_time_reset.png" />
 
 ### counter_set_time = budík
-Upravený blok counterů pro nastavování času budíku. Pomocí switche je možno přepínat mezi nastavováním minut a hodin.
-Simulace nastavování hodin (poloha switche 0):
+Upravený blok counterů pro nastavování času budíku. Pomocí sw0 je možno přepínat mezi nastavováním minut a hodin.
+Simulace nastavování hodin (poloha sw0 0):
 Simulace zde: [tb_counter_set_time](testbenche/tb_counter_set_time.vhd).
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_hours1.png" />
-Simulace nastavování minut (poloha switche 1):
+Simulace nastavování minut (poloha sw0 1):
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_minutes1.png" />
 
