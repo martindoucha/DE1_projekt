@@ -8,6 +8,10 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 * Jan Kocourek
 * Pavel Čurda
 
+## Demonstrativní video
+
+https://youtu.be/aKwyj8EnFtU
+
 ## Blokové schéma
 alarm_clock_top
 <img width="1279" height="602" alt="schema_final_revised drawio" src="pracovni/schema_final_revised.drawio.png" />
