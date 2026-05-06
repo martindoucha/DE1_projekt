@@ -94,6 +94,7 @@ Simulace zde: [tb_debounce](testbenche/tb_debounce.vhd).
 ### countery_cas = aktuální čas
 Tato součástka má dva režimy, které se dají přepínat sw1. Když je hodnota sw1 0 čas je měřen (pomocí pulzu na clk_en) a komponenta funguje jako hodiny. Pokud je sw1 na hodnotě 1, je možno nastavovat čas pomocí tlačítka a sw0 jako u counter_set_time.
 Sw1 je na 0, to znamená že čas samovolně běží: 
+
 Simulace zde: [tb_counter_time](testbenche/tb_counter_time.vhd).
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_oprava.png" />
 Sw1 je na 1 a sw0 na 1 ,to znamená, že je možno tlačítkem přenastavovat minuty
