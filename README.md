@@ -67,13 +67,15 @@ Logika zajišťující inkrementaci času.
 
 ### Comparator
 Digitální porovnávač, který v každém taktu kontroluje shodu mezi aktuálním časem a nastaveným alarmem. Při shodě vysílá aktivační signál do bloku Snooze.
+
 Simulace zde: [tb_comparator](testbenche/tb_comparator.vhd).
  
 ### Display Driver
 Zajišťuje dynamický multiplexing pro 8 cifer displeje. Převádí BCD data na kódy pro 7 segmentů pomocí sub-modulu `bin2seg`.
 
 <img width="1009" height="561" alt="display_driver" src="https://github.com/user-attachments/assets/494fbe73-136f-49b4-95d9-a1856974bc2c" />
-Simulace zde: [tb_display_driver](./testbenche/tb_display_driver.vhd).
+
+Simulace zde: [tb_display_driver](testbenche/tb_display_driver.vhd).
 
 
 ### rising_edge_detector
