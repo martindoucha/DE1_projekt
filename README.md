@@ -9,8 +9,7 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 * Pavel Čurda
 
 ## Demonstrativní video
-
-https://youtu.be/aKwyj8EnFtU
+[![DE1 Alarm clock]()](https://youtu.be/aKwyj8EnFtU?si=muQgaNgetgJnqIRF)
 
 ## Blokové schéma
 alarm_clock_top
