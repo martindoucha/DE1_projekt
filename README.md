@@ -41,8 +41,11 @@ Data jsou zobrazena pomocí časového multiplexu (obnovovací frekvence cca 1 k
 * **LED16_R (červená)**: Signalizuje aktivní stav buzení. Svítí, dokud není alarm potvrzen tlačítkem nebo neuplyne časový limit.
 
 ---
-## Reporty
+## Reporty využití desky
+Následující tabulka ukazuje využití Look Up Tabulek, klopných obvodů a dalších částí desky po syntéze.
 <img width="479" height="132" alt="schema_final_revised drawio" src="pracovni/post_syntesis.png" />
+
+Následující tabulka ukazuje využití Look Up Tabulek, klopných obvodů a dalších částí desky po implementaci.
 <img width="484" height="132" alt="schema_final_revised drawio" src="pracovni/post_impl.png" />
 
 
