@@ -21,6 +21,7 @@ architecture Behavioral of counter_time is
         port (
             clk: in std_logic;
             rst: in std_logic;
+            f_out: out std_logic;
             ce : out std_logic);
     end component clk_en;
     
