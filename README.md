@@ -41,6 +41,9 @@ Data jsou zobrazena pomocí časového multiplexu (obnovovací frekvence cca 1 k
 * **LED16_R (červená)**: Signalizuje aktivní stav buzení. Svítí, dokud není alarm potvrzen tlačítkem nebo neuplyne časový limit.
 
 ---
+## Reporty
+<img width="484" height="132" alt="schema_final_revised drawio" src="pracovni/post_impl.png" />
+<img width="479" height="132" alt="schema_final_revised drawio" src="pracovni/post_synthesis.png" />
 
 ## Komponenty systému
 
