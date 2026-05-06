@@ -9,7 +9,9 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 * Pavel Čurda
 
 ## Demonstrativní video
-[![Youtube Video](<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/eba52429-0cab-4669-99a4-6988bd12b182" />)](https://www.youtube.com/watch?v=aKwyj8EnFtU)
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/909fd6d4-500a-4e2e-b31f-36a958da26f4" />
+
+[![Youtube Video](<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/909fd6d4-500a-4e2e-b31f-36a958da26f4" />)](https://www.youtube.com/watch?v=aKwyj8EnFtU)
 
 ## Blokové schéma
 alarm_clock_top
