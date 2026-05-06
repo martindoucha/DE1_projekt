@@ -34,7 +34,7 @@ Data jsou zobrazena pomocí časového multiplexu (obnovovací frekvence cca 1 k
 * **Segmenty (A-G)**: Výstupní sběrnice `seg(6:0)` pro ovládání jednotlivých segmentů (společná anoda).
 * **Anody (AN0-AN7)**: Výstupní sběrnice `an(7:0)` pro aktivaci konkrétní cifry.
 
-### Dvojtečka (DP)
+### Tečka (DP)
 * Indikátor vteřinového taktu. Bliká v rytmu 1 Hz (0,5 s svítí / 0,5 s nesvítí) pro vizuální potvrzení běhu hodin.
 
 ### LED signalizace
