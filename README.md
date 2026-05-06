@@ -43,7 +43,7 @@ Data jsou zobrazena pomocí časového multiplexu (obnovovací frekvence cca 1 k
 ---
 ## Reporty
 <img width="484" height="132" alt="schema_final_revised drawio" src="pracovni/post_impl.png" />
-<img width="479" height="132" alt="schema_final_revised drawio" src="pracovni/post_synthesis.png" />
+<img width="479" height="132" alt="schema_final_revised drawio" src="pracovni/post_syntesis.png" />
 
 ## Komponenty systému
 
