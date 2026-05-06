@@ -83,33 +83,34 @@ begin
 
         -- ***EDIT*** Add stimuli here
         
-        nas_hd <= '0000';
-        nas_hj <= '0100';
-        nas_md <= '0011';
-        nas_mj <= '0000'; -- 8:30
+        nas_hd <= "0000";
+        nas_hj <= "0100";
+        nas_md <= "0011";
+        nas_mj <= "0000"; -- 8:30
         
-        akt_hd <= '0000';
-        akt_hj <= '0100';
-        akt_md <= '0010';
-        akt_mj <= '1000'; -- 8:28
+        akt_hd <= "0000";
+        akt_hj <= "0100";
+        akt_md <= "0010";
+        akt_mj <= "1000"; -- 8:28
         wait for 100 ns; --wait 10 clk cycles
         
-        akt_hd <= '0000';
-        akt_hj <= '0100';
-        akt_md <= '0010';
-        akt_mj <= '1001'; -- 8:29
+        akt_hd <= "0000";
+        akt_hj <= "0100";
+        akt_md <= "0010";
+        akt_mj <= "1001"; -- 8:29
         wait for 100 ns;
 
-        akt_hd <= '0000';
-        akt_hj <= '0100';
-        akt_md <= '0011';
-        akt_mj <= '0000'; -- 8:30
+        akt_hd <= "0000";
+        akt_hj <= "0100";
+        akt_md <= "0011";
+        akt_mj <= "0000"; -- 8:30
         wait for 100 ns;
         
-        akt_hd <= '0000';
-        akt_hj <= '0100';
-        akt_md <= '0011';
-        akt_mj <= '0001'; -- 8:31
+        akt_hd <= "0000";
+        akt_hj <= "0100";
+        akt_md <= "0011";
+        akt_mj <= "0001"; -- 8:31
+        wait for 100 ns;
         -- Stop the clock and hence terminate the simulation
         TbSimEnded <= '1';
         wait;

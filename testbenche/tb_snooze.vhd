@@ -82,9 +82,9 @@ begin
 	wait for 10 ns;
 	timer_snooze_over <= '0';
 	wait for 40 ns;
-	btn_hold <= '1';
+	btn_press <= '1';
 	wait for 10 ns;
-	btn_hold <= '0';
+	btn_press <= '0';
 	wait for 40 ns;
 
         -- Stop the clock and hence terminate the simulation

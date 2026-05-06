@@ -65,7 +65,7 @@ begin
         btn_in <= '0';
         wait for 50 ns;
         btn_in <= '1';
-        wait for 250 ns;
+        wait for 600 ns; -- 600 for btn_hold, 300 for btn_release (not used)
         btn_in <= '0';  -- Final stable press
 
         -- Simulate button bounce on release
