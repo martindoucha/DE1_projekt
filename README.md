@@ -94,7 +94,7 @@ Tato součástka má dva režimy, které se dají přepínat sw1. Když je hodno
 Sw1 je na 0, to znamená že čas samovolně běží: 
 Simulace zde: [tb_counter_time](testbenche/tb_counter_time.vhd).
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_oprava.png" />
-Sw1 je na 1 a sw0 na 1 ,to znamená, že je možno tlačítkem přenastavovat hodiny
+Sw1 je na 1 a sw0 na 1 ,to znamená, že je možno tlačítkem přenastavovat minuty
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_nastaveni_minut.png" />
 Sw1 je na 1 a sw0 na 0 ,to znamená, že je možno tlačítkem přenastavovat hodiny
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_nastaveni_hodin.png" />
