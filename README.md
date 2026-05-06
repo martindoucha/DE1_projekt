@@ -54,9 +54,11 @@ Hlavní řídicí blok budíku, který integruje:
 
 Simulace snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času. Puls start vybudí změnu stavu do aktivního, kde squeak se přepne na vysokou úroveň. Po nějaké době, přijde puls že nebyla žádná reakce, a čeká se na 5 minutový timer (snooze_over) až znovu zapne aktivní stav. Aktivní stav se ukončí po dlouhém stisku tlačítka.
 <img width="901" height="316" alt="Obrázek simulace snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času." src="simulace/SnoozeTBonTimeout.png" />
+Simulace zde: [tb_snooze](testbenche/tb_snooze.vhd).
 
 Simulace snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítkem. Stejně jako v předchozí simulaci, s rozdílem že odložení zvonku je provedeno krátkým stiskem tlačítka.
 <img width="1409" height="306" alt="Obrázek simulace snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítkem." src="simulace/SnoozeTBonPress.png" />
+Simulace zde: [tb_snooze2](testbenche/tb_snooze2.vhd).
 
 ### Time Counter (counter_auto)
 Logika zajišťující inkrementaci času. 
@@ -65,6 +67,7 @@ Logika zajišťující inkrementaci času.
 
 ### Comparator
 Digitální porovnávač, který v každém taktu kontroluje shodu mezi aktuálním časem a nastaveným alarmem. Při shodě vysílá aktivační signál do bloku Snooze.
+Simulace zde: [tb_comparator](testbenche/tb_comparator.vhd).
 
 ### Display Driver
 Zajišťuje dynamický multiplexing pro 8 cifer displeje. Převádí BCD data na kódy pro 7 segmentů pomocí sub-modulu `bin2seg`.
