@@ -20,7 +20,8 @@ architecture Behavioral of debounce is
     constant C_MAX       : positive := 200_000;  -- Sampling period
                                            -- 2 for simulation
                                            -- 200_000 (2 ms) for implementation !!!
-    constant C_HOLD      : positive := 50_000_000;
+    constant C_HOLD      : positive := 50_000_000; -- 50_000_000 impl
+                                                   -- 50 sim
 
     ----------------------------------------------------------------
     -- Internal signals
