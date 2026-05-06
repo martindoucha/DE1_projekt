@@ -81,7 +81,7 @@ Simulace zde: [tb_display_driver](testbenche/tb_display_driver.vhd).
 
 
 ### rising_edge_detector
-Pomocná součástka která vytvoří jedni clockový puls při detekci náběžné hrany.
+Pomocná součástka která vytvoří jeden clockový puls při detekci náběžné hrany.
 
 <img width="1037" height="215" alt="Obrázek simulace rising_edge_detector bloku a jeho reakci na náběžnou hranu vstupního signálu." src="simulace/rising_edge_detectorTB.png" />
 
