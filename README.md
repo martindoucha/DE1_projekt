@@ -103,6 +103,7 @@ Sw1 je na 1 a sw0 na 0 ,to znamená, že je možno tlačítkem přenastavovat ho
 
 ### counter_time
 Součástka složená z kombinace součástek countery_cas a clk_en. Protože pro určení jedné minuty s frekvencí 100 MHz by G_MAX bylo příliš velké číslo, je zde zaveden komponent clk_en s hodnotou G_MAX = 100_000_000, který generuje puls každou sekundu. Tyto pulsy jsou pak počítány counterem v procesu p_minute_maker, který sčítá sekundové pulsy a každou minutu vygeneruje puls sig_one_mini, který je přiveden na en vstup součástky countery_cas.
+Simulace běhu času zde: [tb_counter_set_time](testbenche/tb_counter_time_beh_casu.vhd).
 
 Simulace přechodů minut (cnt2mj a cnt2md):
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_counter_time_prechody_minut.png" />
