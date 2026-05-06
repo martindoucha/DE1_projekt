@@ -6,10 +6,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity tb_snooze is
-end tb_snooze;
+entity tb_snooze2 is
+end tb_snooze2;
 
-architecture tb of tb_snooze is
+architecture tb of tb_snooze2 is
 
     component snooze
         port (clk               : in std_logic;
