@@ -93,18 +93,17 @@ Simulace zde: [tb_debounce](testbenche/tb_debounce.vhd).
 
 ### countery_cas = aktuální čas
 Tato součástka má dva režimy, které se dají přepínat sw1. Když je hodnota sw1 0 čas je měřen (pomocí pulzu na clk_en) a komponenta funguje jako hodiny. Pokud je sw1 na hodnotě 1, je možno nastavovat čas pomocí tlačítka a sw0 jako u counter_set_time.
-Sw1 je na 0, to znamená že čas samovolně běží: 
-
-Simulace zde: [tb_counter_time](testbenche/tb_counter_time.vhd).
+Sw1 je na 0, to znamená že čas samovolně běží:
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_oprava.png" />
 Sw1 je na 1 a sw0 na 1 ,to znamená, že je možno tlačítkem přenastavovat minuty
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_nastaveni_minut.png" />
 Sw1 je na 1 a sw0 na 0 ,to znamená, že je možno tlačítkem přenastavovat hodiny
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/counter_time_nastaveni_hodin.png" />
 
+Simulace zde: [tb_counter_time](testbenche/tb_counter_time.vhd).
+
 ### counter_time
 Součástka složená z kombinace součástek countery_cas a clk_en. Protože pro určení jedné minuty s frekvencí 100 MHz by G_MAX bylo příliš velké číslo, je zde zaveden komponent clk_en s hodnotou G_MAX = 100_000_000, který generuje puls každou sekundu. Tyto pulsy jsou pak počítány counterem v procesu p_minute_maker, který sčítá sekundové pulsy a každou minutu vygeneruje puls sig_one_mini, který je přiveden na en vstup součástky countery_cas.
-Simulace běhu času zde: [tb_counter_beh_casu](testbenche/tb_counter_time_beh_casu.vhd).
 
 Simulace přechodů minut (cnt2mj a cnt2md):
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_counter_time_prechody_minut.png" />
@@ -115,11 +114,13 @@ Simulace přechodů hodin (cnt2hj a cnt2hd):
 Simulace překlopení z 23:59 na 0:00 :
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_cas" src="simulace/simulace_counter_time_reset.png" />
 
+Simulace běhu času zde: [tb_counter_beh_casu](testbenche/tb_counter_time_beh_casu.vhd).
+
 ### counter_set_time = budík
 Upravený blok counterů pro nastavování času budíku. Pomocí sw0 je možno přepínat mezi nastavováním minut a hodin.
 Simulace nastavování hodin (poloha sw0 0):
-Simulace zde: [tb_counter_set_time](testbenche/tb_counter_set_time.vhd).
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_hours1.png" />
 Simulace nastavování minut (poloha sw0 1):
 <img width="1313" height="352" alt="Obrázek simulace bloku countery_set_time_hodiny" src="simulace/simulace_counter_set_time_minutes1.png" />
 
+Simulace zde: [tb_counter_set_time](testbenche/tb_counter_set_time.vhd).
