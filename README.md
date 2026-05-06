@@ -9,7 +9,7 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 * Pavel Čurda
 
 ## Demonstrativní video
-[![pro zhlédnutí Youtube videa klikněte zde](https://www.youtube.com/watch?v=aKwyj8EnFtU)
+[pro zhlédnutí Youtube videa klikněte zde](https://www.youtube.com/watch?v=aKwyj8EnFtU)
 
 ## Blokové schéma
 alarm_clock_top
