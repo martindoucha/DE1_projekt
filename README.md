@@ -3,7 +3,7 @@
 V tomto projektu se budeme zabývat vytvořením funkčních digitálních 24hodinových hodin s integrovanou funkcí alarmu, implementované na vývojové desce Nexys A7-50T.
 Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživateli nastavit čas buzení. Aktuální čas a nastavený alarm jsou zobrazeny současně na osmi pozicích sedmisegmentového displeje díky technice časového multiplexingu.
 
-## Členové týmu a kompetence
+## Členové týmu
 * Martin Doucha
 * Jan Kocourek
 * Pavel Čurda
@@ -53,7 +53,8 @@ Hlavní řídicí blok budíku, který integruje:
 * **FSM**: Konečný automat přepínající stavy mezi IDLE, ACTIVE (zvonění) a SNOOZE.
 
 Simulace snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času. Puls start vybudí změnu stavu do aktivního, kde squeak se přepne na vysokou úroveň. Po nějaké době, přijde puls že nebyla žádná reakce, a čeká se na 5 minutový timer (snooze_over) až znovu zapne aktivní stav. Aktivní stav se ukončí po dlouhém stisku tlačítka.
-<img width="901" height="316" alt="Obrázek simulace snooze bloku a jeho reakci na spuštění a samostatného vypnutí po uplynutí času." src="simulace/SnoozeTBonTimeout.png" />
+<img width="799" height="275" alt="tb_snooze_0605" src="https://github.com/user-attachments/assets/6470098e-2f20-467d-a72b-5aa21331c9ce" />
+
 Simulace zde: [tb_snooze](testbenche/tb_snooze.vhd).
 
 Simulace snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítkem. Stejně jako v předchozí simulaci, s rozdílem že odložení zvonku je provedeno krátkým stiskem tlačítka.
@@ -67,6 +68,7 @@ Logika zajišťující inkrementaci času.
 
 ### Comparator
 Digitální porovnávač, který v každém taktu kontroluje shodu mezi aktuálním časem a nastaveným alarmem. Při shodě vysílá aktivační signál do bloku Snooze.
+<img width="1343" height="317" alt="tb_comparator_0605" src="https://github.com/user-attachments/assets/37e66a49-2e31-4d11-8861-8df038c68862" />
 
 Simulace zde: [tb_comparator](testbenche/tb_comparator.vhd).
  
@@ -85,8 +87,8 @@ Pomocná součástka která vytvoří jedni clockový puls při detekci náběž
 
 ### debounce
 Upravená součástka z počítačových cvičení, s detekcí držení.
+<img width="1135" height="241" alt="tb_debounce_0605" src="https://github.com/user-attachments/assets/4dfa8792-09d0-4b14-a59b-7b16ed771c70" />
 
-<img width="1313" height="302" alt="Obrázek simulace debounce bloku, s dalšími výstupními signály." src="simulace/debounceTB.png" />
 Simulace zde: [tb_debounce](testbenche/tb_debounce.vhd).
 
 ### countery_cas = aktuální čas
