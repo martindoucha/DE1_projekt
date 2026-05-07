@@ -13,8 +13,6 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 
 ## Blokové schéma
 alarm_clock_top
-<img width="1279" height="602" alt="schema_final_revised drawio" src="pracovni/schema_final_revised.drawio.png" />
-
 <img width="1443" height="679" alt="image" src="https://github.com/user-attachments/assets/41a676b4-1560-4be4-9690-2752d9f95f03" />
 
 
