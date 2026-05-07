@@ -72,11 +72,6 @@ Simulace snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítk
 <img width="1409" height="306" alt="Obrázek simulace snooze bloku a jeho reakci na spuštění a odložení alarmu tlačítkem." src="simulace/SnoozeTBonPress.png" />
 Simulace zde: [tb_snooze2](testbenche/tb_snooze2.vhd).
 
-### Time Counter (counter_auto)
-Logika zajišťující inkrementaci času. 
-* Obsahuje vnitřní děličku frekvence (`clk_en`) pro získání vteřinového taktu.
-* Spravuje přechody: 59 s → 0 s, 59 min → 0 min a 23:59:59 → 00:00:00.
-
 ### Comparator
 Digitální porovnávač, který v každém taktu kontroluje shodu mezi aktuálním časem a nastaveným alarmem. Při shodě vysílá aktivační signál do bloku Snooze.
 <img width="1343" height="317" alt="tb_comparator_0605" src="https://github.com/user-attachments/assets/37e66a49-2e31-4d11-8861-8df038c68862" />
