@@ -15,6 +15,9 @@ Systém udržuje přesný čas pomocí kaskády čítačů a umožňuje uživate
 alarm_clock_top
 <img width="1279" height="602" alt="schema_final_revised drawio" src="pracovni/schema_final_revised.drawio.png" />
 
+<img width="1443" height="679" alt="image" src="https://github.com/user-attachments/assets/41a676b4-1560-4be4-9690-2752d9f95f03" />
+
+
 snooze_top
 <img width="6035" height="4405" alt="snooze_top2 drawio" src="pracovni/snooze_top2.drawio.png" />
 
